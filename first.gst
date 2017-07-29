@@ -53,8 +53,19 @@ Object subclass: Person [
 ]
 people := Array new: 10.
 person := Person name: 'Peter' age: 11.
-person printNl.
-person happyBirthday.
-person printNl.
 people at: 1 put: person.
-people printNl.
+person := Person name: 'Person 1' age: 30.
+people at: 2 put: person.
+people do: [ :person | 
+  person isNil
+    ifFalse: [ person printNl]. 
+].
+'After one year:' printNl.
+people do: [ :person | 
+  person isNil
+    ifFalse: [ person happyBirthday]. 
+].
+people do: [ :person |
+  person isNil
+    ifFalse: [ person printNl].
+].
