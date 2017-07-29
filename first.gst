@@ -4,7 +4,7 @@ Object subclass: Person [
     Person class >> new [
         | obj |
         <category: 'instance creation'>
-        'Consider using name:age:' printNl.
+        'Consider using name:age:' displayNl.
         obj := super new.
         obj name: ''.
         obj age: 0.
@@ -47,7 +47,7 @@ Object subclass: Person [
         <category: 'aging'>
 	| message |
 	message := 'Happy Birthday, ', name, '!'.
-	message printNl.
+	message displayNl.
 	age := age + 1.
     ]
 ]
@@ -58,14 +58,14 @@ person := Person name: 'Person 1' age: 30.
 people at: 2 put: person.
 people do: [ :person | 
   person isNil
-    ifFalse: [ person printNl]. 
+    ifFalse: [ person displayNl]. 
 ].
-'After one year:' printNl.
+'After one year:' displayNl.
 people do: [ :person | 
   person isNil
     ifFalse: [ person happyBirthday]. 
 ].
 people do: [ :person |
   person isNil
-    ifFalse: [ person printNl].
+    ifFalse: [ person displayNl].
 ].
