@@ -43,9 +43,18 @@ Object subclass: Person [
         <category: 'setter'>
         age := val.
     ]
+    happyBirthday [
+        <category: 'aging'>
+	| message |
+	message := 'Happy Birthday, ', name, '!'.
+	message printNl.
+	age := age + 1.
+    ]
 ]
 people := Array new: 10.
 person := Person name: 'Peter' age: 11.
+person printNl.
+person happyBirthday.
 person printNl.
 people at: 1 put: person.
 people printNl.
